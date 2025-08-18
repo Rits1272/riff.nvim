@@ -1,4 +1,5 @@
 local log = require('riff.log').log
+local config = require('riff.config').get
 
 local M = {}
 
@@ -16,7 +17,7 @@ end
 function M.search_ytmusic(query, callback)
   local script_path = resolve_music_helper_path()
 
-  vim.fn.jobstart({ "python3", script_path, query }, {
+  vim.fn.jobstart({ config().python_cmd, script_path, query }, {
     stdout_buffered = true,
     on_stdout = function(_, data)
       if not data or #data == 0 then

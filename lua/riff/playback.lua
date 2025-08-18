@@ -1,10 +1,13 @@
 local log = require('riff.log').log
 local process = require('riff.process')
 local status = require('riff.status')
+local config = require('riff.config').get
 
 local M = {}
 
-local mpv_socket = "/tmp/nvim-mpv.sock"
+local function mpv_socket()
+  return config().mpv_socket
+end
 local mpv_job_id = nil
 
 function M.stop()
@@ -38,7 +41,7 @@ function M.play(video_id, title)
   mpv_job_id = vim.fn.jobstart({
     "mpv",
     "--no-video",
-    "--input-ipc-server=" .. mpv_socket,
+    "--input-ipc-server=" .. mpv_socket(),
     stream_url
   }, { detach = true, pty = false })
 

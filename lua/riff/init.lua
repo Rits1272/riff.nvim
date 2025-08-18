@@ -1,3 +1,4 @@
+local config = require('riff.config')
 local search = require('riff.search')
 local picker = require('riff.picker')
 local playback = require('riff.playback')
@@ -18,4 +19,10 @@ vim.api.nvim_create_user_command("Riff", function(opts)
 end, { nargs = "+" })
 
 vim.api.nvim_create_user_command("RiffStop", playback.stop, {})
+
+return {
+  setup = function(opts)
+    config.setup(opts)
+  end,
+}
 
