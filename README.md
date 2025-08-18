@@ -1,12 +1,17 @@
 # riff.nvim
 
-Play YouTube Music straight from Neovim – searchable via Telescope, streamed with mpv, and controlled with simple commands. Minimal, fast, and theme‑agnostic.
+Minimalistic neovim plugin to stream songs straight without leaving the editor - searchable via Telescope, streamed with mpv, and controlled with simple commands. Minimal, fast, and theme‑agnostic.
+
+https://github.com/user-attachments/assets/8f8d948f-6640-4dc7-a464-cd4f847a817d
+
 
 ## Features
 
 * Search YouTube Music
-* Instant streaming through mpv (audio‑only)
-* Get suggestive songs based on the current file buffer \[TODO]
+* Instant audio streaming straight in vim
+* Ability to create playlist [TODO]
+* Ability to loop through recommended songs [TODO]
+* Play songs as per suggestive of code in the file buffer [TODO]
 
 ## Requirements
 
