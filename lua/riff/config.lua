@@ -3,7 +3,6 @@ local M = {}
 local defaults = {
   mpv_socket = "/tmp/nvim-mpv.sock",
   ytdlp_cmd = "yt-dlp",
-  python_cmd = "python3",
   status_echo_delay_ms = 10,
 }
 
