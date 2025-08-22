@@ -1,6 +1,6 @@
 # riff.nvim
 
-Minimalistic Neovim plugin to stream songs straight without leaving the editor - searchable via Telescope, streamed with mpv, and controlled with simple commands. Minimal, fast, and theme‑agnostic.
+Search and stream songs right inside your editor — discoverable with Telescope, played through mpv, and managed with simple commands. Fast, minimal, and theme-agnostic.
 
 https://github.com/user-attachments/assets/8f8d948f-6640-4dc7-a464-cd4f847a817d
 
