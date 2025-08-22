@@ -53,12 +53,10 @@ pip3 install --upgrade yt-dlp
 {
   "rits1272/riff.nvim",
   dependencies = { "nvim-telescope/telescope.nvim" },
-  config = function()
-    require("riff").setup({
+  opts = {
       ytdlp_cmd = "yt-dlp",
       status_echo_delay_ms = 10,
-    })
-  end,
+  },
 }
 ```
 
