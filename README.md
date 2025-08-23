@@ -8,10 +8,8 @@ https://github.com/user-attachments/assets/8f8d948f-6640-4dc7-a464-cd4f847a817d
 ## Features
 
 * Search YouTube Music
-* Instant audio streaming straight in vim
-* Ability to create playlist [TODO]
-* Ability to loop through recommended songs [TODO]
-* Play songs as per suggestive of code in the file buffer [TODO]
+* Instant streaming through mpv (audio‑only)
+* Queue - add/edit/play songs to queue persisted locally
 
 ## Requirements
 
@@ -77,7 +75,10 @@ use {
 
 ## Usage
 
-* `:Riff <query>` – search and play a song
+* `:Riff <query>` – search and queue/play a song
+* `:RiffQueue` – check queue and add/edit/play songs
+* `:RiffQueueShuffle` – shuffle queue
+* `:RiffQueueClear` – remove all songs from queue
 * `:RiffStop` – stop playback
 
 Inside the Telescope picker:
@@ -85,6 +86,6 @@ Inside the Telescope picker:
 * Press Enter in insert or normal mode on a selection to play it.
 
 ## Notes
-
-This plugin is intentionally minimal. If you’d like richer UI, progress, or playlist support, open an issue or PR.
+- This plugin is intentionally minimal. If you’d like richer UI, progress, or playlist support, open an issue or PR.
+- plugin uses `yt-dlp` internally to fetch audio stream from YT. YT sometimes may block downloading audio streamings to yt-dlp
 
