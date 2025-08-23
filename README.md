@@ -32,11 +32,9 @@ brew install mpv yt-dlp
 # mpv
 sudo apt update
 sudo apt install mpv -y
-
-# yt-dlp
-sudo apt install python3-pip -y
-pip3 install --upgrade yt-dlp
 ```
+
+Follow installation steps for `yt-dlp` from [here](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
 
 ### **Windows**
 
