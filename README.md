@@ -1,6 +1,9 @@
 # riff.nvim
 
-Play YouTube Music straight from Neovim – searchable via Telescope, streamed with mpv, and controlled with simple commands. Minimal, fast, and theme‑agnostic.
+Search and stream songs right inside your editor — discoverable with Telescope, played through mpv, and managed with simple commands. Fast, minimal, and theme-agnostic.
+
+https://github.com/user-attachments/assets/8f8d948f-6640-4dc7-a464-cd4f847a817d
+
 
 ## Features
 
@@ -48,12 +51,10 @@ pip3 install --upgrade yt-dlp
 {
   "rits1272/riff.nvim",
   dependencies = { "nvim-telescope/telescope.nvim" },
-  config = function()
-    require("riff").setup({
+  opts = {
       ytdlp_cmd = "yt-dlp",
       status_echo_delay_ms = 10,
-    })
-  end,
+  },
 }
 ```
 
