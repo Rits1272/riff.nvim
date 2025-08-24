@@ -77,6 +77,9 @@ use {
 
 * `:Riff <query>` – search and queue/play a song
 * `:RiffQueue` – check queue and add/edit/play songs
+* `:RiffPause` – check queue and add/edit/play songs
+* `:RiffResume` – check queue and add/edit/play songs
+* `:RiffQueueNext` – play next song in the queue or if queue is exhaused, auto-play next song
 * `:RiffQueueShuffle` – shuffle queue
 * `:RiffQueueClear` – remove all songs from queue
 * `:RiffStop` – stop playback
