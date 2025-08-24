@@ -1,3 +1,5 @@
+local log = require('riff.log').log
+
 local M = {}
 
 local queue = {}
@@ -63,9 +65,9 @@ function M.peek_next()
   
   local next_index = current_index + 1
   if next_index > #queue then
-    next_index = 1  -- Loop back to first
+    return nil
   end
-  
+
   return queue[next_index], next_index
 end
 
@@ -146,12 +148,10 @@ function M.load_queue()
     local ok, data = pcall(vim.fn.json_decode, content)
     if ok and data then
       queue = data.queue or {}
-      current_index = data.current_index or 0
+      current_index = data.current_index + 1 or 0
       
-      -- Validate queue items
       for i, item in ipairs(queue) do
         if not item.video_id or not item.title then
-          -- Remove invalid items
           table.remove(queue, i)
           if current_index >= i then
             current_index = math.max(0, current_index - 1)

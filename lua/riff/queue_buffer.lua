@@ -3,6 +3,7 @@ local playback = require('riff.playback')
 local log = require('riff.log').log
 
 local M = {}
+local song_line_start = 8
 
 function M.show()
   local existing_buf = nil
@@ -108,7 +109,7 @@ function M.update_display(buf)
   -- Header
   table.insert(lines, "Riff Queue")
   table.insert(lines, string.format("%d songs • Now: %d",
-    status.total, status.current + 1))
+    status.total, status.current))
   table.insert(lines, "Queue is persistent between sessions")
   table.insert(lines, "")
   table.insert(lines, string.rep("-", 80))
@@ -124,17 +125,17 @@ function M.update_display(buf)
       local prefix = "   "
       local status_icon = ""
 
-      if i + 1 == status.current then
+      if i == status.current then
         prefix = ">"
         status_icon = " [NOW PLAYING]"
-      elseif i + 2 == status.current + 1 then
+      elseif i + 1 == status.current + 1 then
         prefix = ">>"
         status_icon = " [NEXT]"
       end
 
       local title = song.title
       if #title > 50 then
-        title = title:sub(1, 47) .. "..."
+        title = title:sub(1, 4) .. "..."
       end
 
       local artist = song.artist or "Unknown"
@@ -171,7 +172,6 @@ function M.play_selected()
   local song_index = nil
 
   -- Header is 6 lines, divider is 1 line, so songs start at line 8
-  local song_line_start = 7
   for i, _ in ipairs(all_songs) do
     if line == (song_line_start + i - 1) then
       song_index = i
@@ -197,7 +197,6 @@ function M.remove_selected()
   local all_songs = queue.get_all()
   local song_index = nil
 
-  local song_line_start = 8
   for i, song in ipairs(all_songs) do
     if line == (song_line_start + i - 1) then
       song_index = i
