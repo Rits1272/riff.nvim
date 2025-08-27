@@ -58,6 +58,7 @@ function M.show()
   vim.api.nvim_buf_set_option(buf, 'relativenumber', false)
   vim.api.nvim_buf_set_option(buf, 'cursorline', true)
   vim.api.nvim_buf_set_option(buf, 'wrap', false)
+  vim.api.nvim_buf_set_option(buf, 'number', false)
 
   local opts = { buffer = buf, silent = true, nowait = true }
   vim.keymap.set('n', 'q', '<Cmd>lua require("riff.queue_buffer").close()<CR>', opts)
