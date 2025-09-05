@@ -78,6 +78,13 @@ function M.get_current()
   return queue[current_index]
 end
 
+function M.set_current(idx)
+  if idx < 1 or idx > #queue then
+    return nil
+  end
+  current_index = idx
+end
+
 function M.get_status()
   return {
     total = #queue,

@@ -126,10 +126,10 @@ function M.update_display(buf)
       local status_icon = ""
 
       if i == status.current then
-        prefix = ">"
+        prefix = "  >"
         status_icon = " [NOW PLAYING]"
-      elseif i + 1 == status.current + 1 then
-        prefix = ">>"
+      elseif i == status.current + 1 then
+        prefix = "  >>"
         status_icon = " [NEXT]"
       end
 
@@ -183,6 +183,7 @@ function M.play_selected()
     queue.set_playing(true)
     vim.api.nvim_win_close(0, true)
     local song = all_songs[song_index]
+    queue.set_current(song_index)
     log({ song_msg = song})
     playback.play(song.video_id, song.title)
   else
