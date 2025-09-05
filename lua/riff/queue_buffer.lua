@@ -3,7 +3,7 @@ local playback = require('riff.playback')
 local log = require('riff.log').log
 
 local M = {}
-local song_line_start = 8
+local song_line_start = 7
 
 function M.show()
   local existing_buf = nil
@@ -157,7 +157,7 @@ function M.update_display(buf)
   M.set_buffer_lines(buf, lines)
 
   if status.current > 0 then
-    local cursor_line = 7 + status.current
+    local cursor_line = song_line_start + status.current
     if cursor_line <= #lines then
       vim.api.nvim_win_set_cursor(0, {cursor_line, 0})
     end
