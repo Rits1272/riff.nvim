@@ -4,6 +4,10 @@ Search and stream songs right inside your editor — discoverable with Telescope
 
 https://github.com/user-attachments/assets/8f8d948f-6640-4dc7-a464-cd4f847a817d
 
+### Add/Shuffle/Delete songs to/from queue
+<img width="1280" height="774" alt="image" src="https://github.com/user-attachments/assets/226ddc77-8a17-462c-86f9-0b1c5122980a" />
+
+
 
 ## Features
 
